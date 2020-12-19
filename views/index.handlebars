@@ -1,0 +1,41 @@
+<form method="POST" action="/">
+  <div class="container py-5">
+    <h1 class="trash-talk">今天想要噴誰呀？</h1>
+
+    <section class="position row d-flex justify-content-between">
+      <div class="card developer col-3">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+          class="card-img-top" alt="angry-developer">
+        <div class="card-body d-flex justify-content-center">
+          <input type="radio" name="position" value="developer" {{#if targetChecked.developer}} checked {{/if}}>
+          <label for="developer">工程師</label>
+        </div>
+      </div>
+      <div class="card designer col-3">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+          class="card-img-top" alt="angry-designer">
+        <div class="card-body d-flex justify-content-center">
+          <input type="radio" name="position" value="designer" {{#if targetChecked.designer}} checked {{/if}}>
+          <label for="designer">設計師</label>
+        </div>
+      </div>
+      <div class="card entrepreneur col-3">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+          class="card-img-top" alt="angry-entrepreneur">
+        <div class="card-body d-flex justify-content-center">
+          <input type="radio" name="position" value="entrepreneur" {{#if targetChecked.entrepreneur}} checked {{/if}}>
+          <label for="entrepreneur">創業家</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="trash-talk-generator row mt-5">
+      <button class="btn btn-success col-2" type="submit">製造幹話</button>
+      {{#if trashTalk}}
+      <div class="alert alert-info col-9" role="alert" id="output-trash-talk">
+        <span class="mr-2">幹話開講：</span> <code>{{ trashTalk }}</code>
+      </div>
+      {{/if}}
+    </section>
+  </div>
+</form>
